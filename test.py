@@ -47,7 +47,6 @@ class TestConvertArr(unittest.TestCase):
             '1': 2,
             '2/0': 3,
             '2/1': 4,
-            '3': {},
             '4/05': 1
         }
         
@@ -74,11 +73,11 @@ class TestConvertArr(unittest.TestCase):
         self.oneDict_4 = {}
         
     def test_multiToOne_Dict(self):
-        result = multiToOne(self.multiCon_dict_1)
+        result = multiToOne(self.multiCon_dict_1, '')
         self.assertEqual(result, self.oneDict_1)
     
     def test_multiToOne_List(self):
-        result = multiToOne(self.multiCon_list_2)
+        result = multiToOne(self.multiCon_list_2, '')
         self.assertEqual(result, self.oneDict_2)
     
     # def test_multiToOne_Tuple(self):
@@ -86,9 +85,9 @@ class TestConvertArr(unittest.TestCase):
     #     self.assertEqual(result, self.oneDict_3)
     
     def test_multiToOne_Empty(self):
-        result = multiToOne(self.multiDict_empty_4)
+        result = multiToOne(self.multiDict_empty_4, '')
         self.assertEqual(result, self.oneDict_4)
-        
+
     
     def test_oneToMulti_Dict(self):
         result = oneToMulti(self.oneDict_1)
